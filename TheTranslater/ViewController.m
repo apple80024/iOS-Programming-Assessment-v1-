@@ -55,7 +55,12 @@ static NSString * const API_URL = @"http://www.nactem.ac.uk/software/acromine/di
         self.responseData = responseObject;
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [self performSegueWithIdentifier:@"segue_tableview" sender:self];
+        if (self.responseData.count ==  0) {
+            NSString * msg = @"Please try another word, or check if there is a space behind.";
+            [self showAlert:msg];
+        } else {
+            [self performSegueWithIdentifier:@"segue_tableview" sender:self];
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
@@ -91,4 +96,11 @@ static NSString * const API_URL = @"http://www.nactem.ac.uk/software/acromine/di
     }
 }
 
+-(void)showAlert :(NSString *)msg
+{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Message" message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 @end

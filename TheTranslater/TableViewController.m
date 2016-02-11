@@ -51,10 +51,6 @@
         self.numberAry = [item valueForKey:@"freq"];
         self.yearAry = [item valueForKey:@"since"];
     }
-
-    NSLog(@"%@", self.listAry);
-    NSLog(@"%@", self.numberAry);
-    NSLog(@"%@", self.yearAry);
 }
 
 #pragma mark - Table view data source
