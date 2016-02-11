@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "TableViewController.h"
+
+@class TableViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,6 +23,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+@property (strong, nonatomic) TableViewController * tableviewController;
 
 @end
 

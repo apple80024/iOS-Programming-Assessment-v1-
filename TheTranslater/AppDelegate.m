@@ -17,6 +17,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.tableviewController = [[TableViewController alloc] initWithNibName:@"myCell" bundle: nil];
+//    self.window.rootViewController = self.tableviewController;
+//    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
